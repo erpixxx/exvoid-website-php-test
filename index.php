@@ -1,25 +1,6 @@
 <?php 
 include "db_connection.php";
 
-function getUsernameById($user_id, $conn) {
-    $query = "SELECT username FROM users WHERE id = ?";
-    $stmt = mysqli_prepare($conn, $query);
-
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "i", $user_id);
-        mysqli_stmt_execute($stmt);
-
-        $result = mysqli_stmt_get_result($stmt);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            return $row['username'];
-        }
-    }
-
-    return "unknown";
-}
-
 $query = "SELECT a.*, u.username AS author
           FROM announcements a
           LEFT JOIN users u ON a.author_id = u.id
