@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+/* index */
+
+.news {
+    padding: 1rem;
+    width: 700px;
+}
+
+.announcement {
+    margin-bottom: 1rem;
+}
+
+.author {
+    float: right;
+}
+
+/* adminpage */
+
+.adminpage {
+    margin: 1rem;
+}
