@@ -14,8 +14,8 @@ if (!$conn) {
     exit("Failed to connect to the database");
 }
 
-$title = isset($_GET['title']);
-$content = isset($_GET['content']);
+$title = $_GET['title']);
+$content = $_GET['content'];
 $author = $_SESSION['username'];
 
 $query = "SELECT id FROM users WHERE username = '$author'";
